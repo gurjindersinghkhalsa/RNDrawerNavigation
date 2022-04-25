@@ -8,7 +8,22 @@
 
 import React from 'react';
 import {Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import UserScreen from './Screens/UserScreen';
+import WelcomScreen from './Screens/WelcomeScreen';
+
+let Drawer = createDrawerNavigator();
+
 function App() {
-  return <Text>Home Screen</Text>
+  return ( 
+    // <Text>Hello ji</Text>
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen name="UserScreen" component={UserScreen} />
+        <Drawer.Screen name="WelcomScreen" component={WelcomScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
 }
 export default App;
