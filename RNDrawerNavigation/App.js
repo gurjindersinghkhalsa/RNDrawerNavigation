@@ -17,10 +17,17 @@ let Drawer = createDrawerNavigator();
 
 function App() {
   return ( 
-    // <Text>Hello ji</Text>
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="UserScreen" component={UserScreen} />
+      <Drawer.Navigator screenOptions = {{
+         drawerLabel: "Welcome Screen",
+         drawerActiveBackgroundColor:'gray',
+         drawerActiveTintColor: 'white',
+         drawerStyle: {backgroundColor:'yellow'}
+      }}>
+        <Drawer.Screen name="UserScreen" component={UserScreen} options = {{
+          headerStyle: {backgroundColor: 'red'}, 
+          headerTintColor: 'black',
+        }}/>
         <Drawer.Screen name="WelcomScreen" component={WelcomScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
